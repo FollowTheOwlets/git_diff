@@ -1,4 +1,4 @@
- void goToNext(DocumentReference doc){
+    void goToNext(DocumentReference doc){
         doc.get().addOnCompleteListener(task -> {
             DocumentSnapshot document = task.getResult();
             try {
@@ -19,3 +19,7 @@
             }
         }
     }
+
+    void openMain() {
+        Intent in = new Intent(this, MainActivity.class);
+        startActivity(in);
