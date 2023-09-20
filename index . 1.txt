@@ -1,24 +1,14 @@
-    void goToNext(DocumentReference doc){
+    void goToNext(DocumentReference doc) {
         doc.get().addOnCompleteListener(task -> {
             DocumentSnapshot document = task.getResult();
             try {
-                showGoogleTabs(document.get("link").toString());
+                boobooboo(document.get("link").toString());
             } catch (UnsupportedEncodingException e) {
                 throw new RuntimeException(e);
             }
         });
     }
-
-    void checkPermissions() {
-        if (Build.VERSION.SDK_INT >= 33) {
-            ActivityResultLauncher<String> requestPermissionLauncher =
-                    registerForActivityResult(new ActivityResultContracts.RequestPermission(), isGranted -> {});
-            if (!shouldShowRequestPermissionRationale(Manifest.permission.POST_NOTIFICATIONS)) {
-                requestPermissionLauncher.launch(
-                        Manifest.permission.POST_NOTIFICATIONS);
-            }
-        }
-    }
+20.20 .20
 
     void openMain() {
         Intent in = new Intent(this, MainActivity.class);
